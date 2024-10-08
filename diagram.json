@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "kavindu mihiran",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -28.2, "left": 124.2, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -37.6, "left": -105.9, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -202.2,
+      "left": 72.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -237.6,
+      "left": 251.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VCC", "uno:5V", "red", [ "v48", "h326.4" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "v38.4", "h345.6" ] ],
+    [ "lcd1:CS", "uno:10", "green", [ "v19.2", "h124.8", "v-278.4", "h182.4" ] ],
+    [ "lcd1:D/C", "uno:9", "green", [ "v9.6", "h115.2", "v-259.2", "h192" ] ],
+    [ "lcd1:MOSI", "uno:11", "green", [ "v28.8", "h124.79", "v-307.2", "h144" ] ],
+    [ "lcd1:SCK", "uno:13", "green", [ "v0", "h76.79", "v-230.4", "h172.8" ] ],
+    [ "lcd1:LED", "lcd1:VCC", "red", [ "v96", "h-67.21", "v-86.4" ] ],
+    [ "lcd1:MISO", "uno:12", "green", [ "v86.4", "h86.39", "v-326.4", "h153.6" ] ],
+    [ "lcd1:GND", "joystick1:GND", "black", [ "v28.8", "h-96", "v-345.6", "h288" ] ],
+    [ "lcd1:VCC", "joystick1:VCC", "red", [ "v19.2", "h-96", "v-345.6", "h259.2" ] ],
+    [ "joystick1:VERT", "uno:A0", "blue", [ "v38.4", "h326.4", "v249.6", "h-28.8" ] ],
+    [ "joystick1:HORZ", "uno:A1", "blue", [ "v28.8", "h345.6", "v240", "h-19.2" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v67.2", "h-38.4" ] ],
+    [ "bz1:2", "uno:8", "red", [ "v76.8", "h9.2" ] ],
+    [ "joystick1:SEL", "uno:7", "blue", [ "v9.6", "h182.4" ] ]
+  ],
+  "dependencies": {}
+}
